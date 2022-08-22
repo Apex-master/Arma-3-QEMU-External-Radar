@@ -15,7 +15,7 @@ New to Game Hacking? Check:
 * No weapon sway (not setCustomAimCoef should bypass most script-based anti cheats)
 
 ## Dependencies
-<b>/arma_dma</b>
+<b>Memory RPM/WPM Client (/arma_dma)</b>
 * [memflow](https://github.com/memflow/memflow)
 * [Socket.IO C++ Client](https://github.com/socketio/socket.io-client-cpp)
 * [websocketpp](https://github.com/memflow/memflow)
@@ -23,7 +23,7 @@ New to Game Hacking? Check:
 * [Catch2](https://github.com/catchorg/Catch2/tree/9c07718b5f779bc1405f98ca6b5b693026f6eac7)
 * [rapidjson](https://github.com/Tencent/rapidjson/tree/a36110e11874bcf35af854940e0ce910c19a8b49)
 
-<b>/nodejs</b>
+<b>Radar and Communication Server (/nodejs)</b>
 * [Leaflet](https://github.com/Leaflet/Leaflet)
 * [express](https://www.npmjs.com/package/express)
 * [socket.io](https://www.npmjs.com/package/socket.io)
