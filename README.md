@@ -4,10 +4,6 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 * Memory RPM/WPM Client (/arma_dma)
 * Radar and Communication Server (/nodejs)
 
-New to Game Hacking? Check:
-* [GuidedHacking](https://guidedhacking.com/)
-* [Unknowncheats](https://www.unknowncheats.me/forum/index.php)
-
 ## Main Features
 
 * Live radar (player coords, player side, player dead, player direction, player in vehicle)
