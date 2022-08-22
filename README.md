@@ -13,13 +13,13 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 
 ## How it works
 <b>Linux Memory RPM/WPM Client</b><br/>
-On the host machine we are able to read and write to our guest machine's memory efficiently and safely using C++ and the memflow connector, arma_dma reads the guest's memory and searches for arma 3, once found it reads all data we need from memory and stores it into a array, the array then gets converted into json format using nlohmann/json and then is sent over to our nodejs server using socket.io.
+On the host machine we are able to read and write to our guest machine's memory efficiently and safely using C++ and the memflow connector, arma_dma reads the guest's memory and searches for arma 3, once found it reads all data we need from memory and stores it into a array, the array then gets converted into json format using nlohmann/json and then is sent over to our NodeJS server using socket.io.
 
 <b>Radar and Communication Server</b><br/>
-The radar relies on NodeJs and socket.io to receive the json data from the Memory RPM/WPM Client (arma_dma). Once received socket.io emits a signal to the front-end containing our player data, it filters through the json and tells Leaflet to setup custom markers for each player.
+The radar relies on NodeJS and socket.io to receive the json data from the Memory RPM/WPM Client (arma_dma). Once received socket.io emits a signal to the front-end containing our player data, it filters through the json and tells Leaflet to setup custom markers for each player.
 
 ## Dependencies
-<b>Memory RPM/WPM Client (/arma_dma)</b>
+<b>Memory RPM/WPM Client (/arma_dma):</b>
 * [memflow](https://github.com/memflow/memflow)
 * [Socket.IO C++ Client](https://github.com/socketio/socket.io-client-cpp)
 * [websocketpp](https://github.com/memflow/memflow)
@@ -27,15 +27,15 @@ The radar relies on NodeJs and socket.io to receive the json data from the Memor
 * [Catch2](https://github.com/catchorg/Catch2/tree/9c07718b5f779bc1405f98ca6b5b693026f6eac7)
 * [rapidjson](https://github.com/Tencent/rapidjson/tree/a36110e11874bcf35af854940e0ce910c19a8b49)
 
-<b>Radar and Communication Server (/nodejs)</b>
+<b>Radar and Communication Server (/nodejs):</b>
 * [Leaflet](https://github.com/Leaflet/Leaflet)
 * [express](https://www.npmjs.com/package/express)
 * [socket.io](https://www.npmjs.com/package/socket.io)
 
 ## Building
-<b>Memory RPM/WPM Client (/arma_dma)</b>
+<b>Memory RPM/WPM Client (/arma_dma):</b>
 1. Download and install the required dependencies.
-2. Navigate to the arma_dma and compile the source by running the script "build.sh". You need to have Rust installed and updated:
+2. Navigate to arma_dma and compile the source by running the script "build.sh". You need to have Rust installed and updated:
 `cd arma_dma`
 `sudo ./build.sh`
 
@@ -43,7 +43,11 @@ The radar relies on NodeJs and socket.io to receive the json data from the Memor
 `cd build`
 `sudo ./arma_dma`
 
-<b>Radar and Communication Server (/nodejs)</b>
+<b>Radar and Communication Server (/nodejs):</b>
+1. Download and install NodeJS and npm.
+2. Navigate to NodeJS and run:
+`npm install`
+`node server.js`
 
 ## To do
 * Implement server and user authentication.
