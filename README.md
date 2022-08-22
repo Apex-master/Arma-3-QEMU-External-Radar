@@ -33,12 +33,12 @@ The radar relies on NodeJS and socket.io to receive the json data from the Memor
 * [socket.io](https://www.npmjs.com/package/socket.io)
 
 ## Building
-My setup:
-OS: Manjaro 21.3 KDE
-Kernel: x86_64 Linux 5.18.19
-CPU: i5-12600K
-GPU: RTX 3070ti
-RAM: 16gb
+My setup: </br>
+OS: Manjaro 21.3 KDE </br>
+Kernel: x86_64 Linux 5.18.19 </br>
+CPU: i5-12600K </br>
+GPU: RTX 3070ti </br>
+RAM: 16gb </br>
 
 <b>Memory RPM/WPM Client (/arma_dma):</b>
 1. Download and install the required dependencies.
