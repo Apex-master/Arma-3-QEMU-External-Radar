@@ -33,6 +33,8 @@ The radar relies on NodeJS and socket.io to receive the json data from the Memor
 * [socket.io](https://www.npmjs.com/package/socket.io)
 
 ## Building
+Setup: Manjaro, Arch Linux 5.18 setup with QEMU GPU passthrough.
+
 <b>Memory RPM/WPM Client (/arma_dma):</b>
 1. Download and install the required dependencies.
 2. Navigate to arma_dma and compile the source by running the script "build.sh". You need to have Rust installed and updated:
