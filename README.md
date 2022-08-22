@@ -22,3 +22,10 @@ New to Game Hacking? Check:
 
 
 ## How it works
+<b>Bypassing Battleye VM Detections</b><br/>
+Using
+
+<b>Memory RPM/WPM Client</b><br/>
+Using
+
+<b>Radar and Communication Server</b><br/>
