@@ -32,6 +32,19 @@ The radar relies on NodeJs and socket.io to receive the json data from the Memor
 * [express](https://www.npmjs.com/package/express)
 * [socket.io](https://www.npmjs.com/package/socket.io)
 
+## Building
+<b>Memory RPM/WPM Client (/arma_dma)</b>
+1. Download and install the required dependencies.
+2. Navigate to the arma_dma and compile the source by running the script "build.sh". You need to have Rust installed and updated:
+
+`sudo ./build.sh`
+
+3. Navigate to newly created /build folder and run arma_dma as root:
+`cd build`
+`sudo ./arma_dma`
+
+<b>Radar and Communication Server (/nodejs)</b>
+
 ## To do
 * Implement server and user authentication.
 * Add other Arma 3 maps
