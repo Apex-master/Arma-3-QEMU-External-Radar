@@ -11,6 +11,13 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 * No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti cheats)
 * No weapon sway (not setCustomAimCoef should bypass most script-based anti cheats)
 
+## How it works
+<b>Linux Memory RPM/WPM Client</b><br/>
+On the host machine we are able to read and write to our guest machine's memory efficiently and safely using C++ and the memflow connector, arma_dma reads the guest's memory and searches for arma 3, once found it reads all data we need from memory and stores it into a array, the array then gets converted into json format using nlohmann/json and then is sent over to our nodejs server using socket.io.
+
+<b>Radar and Communication Server</b><br/>
+The radar relies on NodeJs and socket.io to receive the json data from the Memory RPM/WPM Client (arma_dma). Once received socket.io emits a signal to the front-end containing our player data, it filters through the json and tells Leaflet to setup custom markers for each player.
+
 ## Dependencies
 <b>Memory RPM/WPM Client (/arma_dma)</b>
 * [memflow](https://github.com/memflow/memflow)
@@ -24,14 +31,6 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 * [Leaflet](https://github.com/Leaflet/Leaflet)
 * [express](https://www.npmjs.com/package/express)
 * [socket.io](https://www.npmjs.com/package/socket.io)
-
-
-## How it works
-<b>Linux Memory RPM/WPM Client</b><br/>
-On the host machine we are able to read and write to our guest machine's memory efficiently and safely using C++ and the memflow connector, arma_dma reads the guest's memory and searches for arma 3, once found it reads all data we need from memory and stores it into a array, the array then gets converted into json format using nlohmann/json and then is sent over to our nodejs server using socket.io.
-
-<b>Radar and Communication Server</b><br/>
-The radar relies on NodeJs and socket.io to receive the json data from the Memory RPM/WPM Client (arma_dma). Once received socket.io emits a signal to the front-end containing our player data, it filters through the json and tells Leaflet to setup custom markers for each player.
 
 ## To do
 * Implement server and user authentication.
