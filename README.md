@@ -8,9 +8,10 @@ New to Game Hacking? Check:
 * [GuidedHacking](https://guidedhacking.com/)
 * [Unknowncheats](https://www.unknowncheats.me/forum/index.php)
 
-## Features
+## Main Features
 
 * Live radar (player coords, player side, player dead, player direction, player in vehicle)
+* Arma 3 Altis map files, multi-user browser access for the radar using LAN/VPN.
 * No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti cheats)
 * No weapon sway (not setCustomAimCoef should bypass most script-based anti cheats)
 
@@ -36,4 +37,16 @@ On the host machine we are able to read and write to our guest machine's memory 
 <b>Radar and Communication Server</b><br/>
 The radar relies on NodeJs and socket.io to receive the json data from the Memory RPM/WPM Client (arma_dma). Once received socket.io emits a signal to the front-end containing our player data, it filters through the json and tells Leaflet to setup custom markers for each player.
 
-<b>Bypassing Battleye VM Detections</b><br/>
+## To do
+* Implement server and user authentication.
+* Add other Arma 3 maps
+
+## Credits
+* [apex_dma_kvm_pub](https://github.com/MisterY52/apex_dma_kvm_pub)
+* [Guided Hacking Youtube](https://www.youtube.com/c/GuidedHacking)
+* [ARMA 3 Reversal, Structs and Offsets](https://www.unknowncheats.me/forum/arma-3-a/114242-arma-3-reversal-structs-offsets.html)
+* [memflow](https://github.com/memflow/memflow)
+
+
+## Related
+[Arma-3-reverse-engineering](https://github.com/Apex-master/Arma-3-reverse-engineering)
