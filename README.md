@@ -8,15 +8,15 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 
 * Live radar (player coords, player side, player dead, player direction, player in vehicle)
 * Arma 3 Altis map files, multi-user browser access for the radar using LAN/VPN.
-* No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti cheats)
-* No weapon sway (not setCustomAimCoef should bypass most script-based anti cheats)
+* No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti-cheats)
+* No weapon sway (not setCustomAimCoef should bypass most script-based anti-cheats)
 
 ## How it works
 <b>Linux Memory RPM/WPM Client</b><br/>
-On the host machine we are able to read and write to our guest machine's memory efficiently and safely using C++ and the memflow connector, arma_dma reads the guest's memory and searches for arma 3, once found it reads the games data we need and stores it into a array, the array then gets converted into json format using nlohmann/json and then is sent over to our NodeJS server using socket.io.
+On the host machine, we are able to read and write to our guest machine's memory efficiently and safely using C++ and the memflow connector, arma_dma reads the guest's memory and searches for Arma 3, once found it reads the game's data we need and stores it into an array, the array then gets converted into JSON format using nlohmann/json and then is sent over to our NodeJS server using socket.io.
 
 <b>Radar and Communication Server</b><br/>
-The radar relies on NodeJS and socket.io to receive the json data from the Memory RPM/WPM Client (arma_dma). Once received socket.io emits a signal to the front-end containing our player data, it filters through the json and tells Leaflet to setup custom markers for each player.
+The radar relies on NodeJS and socket.io to receive the JSON data from the Memory RPM/WPM Client (arma_dma). Once received socket.io emits a signal to the front-end containing our player data, it filters through the JSON and tells Leaflet to set up custom markers for each player.
 
 ## Dependencies
 <b>Memory RPM/WPM Client (/arma_dma):</b>
@@ -49,7 +49,7 @@ RAM: 16gb </br>
 `cd arma_dma`
 `sudo ./build.sh`
 
-3. Navigate to newly created /build folder and run arma_dma as root:
+3. Navigate to the newly created /build folder and run arma_dma as root:
 `cd build`
 `sudo ./arma_dma`
 
