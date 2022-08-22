@@ -36,7 +36,7 @@ The radar relies on NodeJs and socket.io to receive the json data from the Memor
 <b>Memory RPM/WPM Client (/arma_dma)</b>
 1. Download and install the required dependencies.
 2. Navigate to the arma_dma and compile the source by running the script "build.sh". You need to have Rust installed and updated:
-
+`cd arma_dma`
 `sudo ./build.sh`
 
 3. Navigate to newly created /build folder and run arma_dma as root:
