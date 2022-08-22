@@ -1,0 +1,85 @@
+.leaflet-container .leaflet-grid-mouseposition {
+  background-color: #1e1e1e;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 0.5rem;
+  padding: 5px;
+  margin:20px;
+  color: white;
+  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  width: 150px;
+  text-align:center;
+}
+
+.box{
+  position: absolute;
+  top: 10px;
+  z-index: 9999;
+  text-align: center;
+  width: 150px;
+  color: white;
+  right: 0.7%;
+  top: 5%;
+  padding: 5px;
+  font: 20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin-left: -75px; /* half of the width */
+  background-color: #1e1e1e;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 1rem;
+  
+}
+
+
+input {
+  display: none;
+}
+.icons-list ul li {
+  list-style: none;
+  width: 50%;
+
+  text-align: center;
+  
+}
+.icons-list ul li label {
+  cursor: pointer;
+  margin: 10px 0px;
+  color: #ddd;
+  background-color: #585858;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  
+  font-size: 22px;
+  border-radius: 50%;
+  transition: all 0.4s;
+  opacity: 0.4;
+  
+}
+.icons-list label:hover {
+  color: #ddd;
+  background-color: #333;
+  font-size: 34px;
+  opacity: 1;
+  
+}
+
+#icon1:checked ~ .icons-list ul li .fa-person,
+#icon2:checked ~ .icons-list ul li .fa-car,
+#icon3:checked ~ .icons-list ul li .fa-helicopter,
+#icon4:checked ~ .icons-list ul li .fa-plane,
+#icon5:checked ~ .icons-list ul li .fa-ship,
+#icon6:checked ~ .icons-list ul li .fa-map {
+  color: #fff;
+  font-size: 30px;
+  opacity: 1;
+}
+
+#social_icons {
+  padding: .5em;
+  line-height: 2.7;
+  -webkit-columns: 150px 2;
+  font-size: 1.2em;
+}

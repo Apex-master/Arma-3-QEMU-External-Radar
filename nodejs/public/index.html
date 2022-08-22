@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Altis</title>
+	<link href="css/leaflet.css" rel="stylesheet">
+	<link href="css/mapUtils.css" rel="stylesheet">
+	<link href="css/all.css" rel="stylesheet">
+
+</head>
+<body style="margin:0;padding:0;border:0;">	
+	<div class="map" id="map" style="width:100%; height:100vh; margin:0;padding:0;border:0;"></div>
+	<script src="js/leaflet.js">
+	</script>
+	<script src="js/jquery.min.js">
+	</script>
+	<script src="js/mapUtils.js">
+	</script>
+	<script src="js/altis.js">
+	</script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<script> 
+	$(function() {
+		var mapInfos = Arma3Map.Maps.altis;
+		var map = L.map("map", {
+			crs: mapInfos.CRS,
+		});
+
+		L.tileLayer("/maps/altis/{z}/{x}/{y}.png", {
+			attribution: mapInfos.attribution,
+			tileSize: mapInfos.tileSize,
+			maxNativeZoom: 6,
+			maxZoom: 8,
+			minZoom: 3,
+			opacity: 0.4
+		}).addTo(map);
+
+		var layerGroup = L.layerGroup().addTo(map);
+
+		map.setView(mapInfos.center, mapInfos.defaultZoom);
+		L.latlngGraticule().addTo(map);
+
+		L.control.scale({
+			maxWidth: 200,
+			imperial: false
+		}).addTo(map);
+
+		L.control.gridMousePosition().addTo(map);
+
+		L.Control.textbox = L.Control.extend({
+			onAdd: function(map) {
+				var text = L.DomUtil.create('div');
+				text.id = "info_text";
+				text.innerHTML = "<strong style='color:white'>Arma 3 External Radar<br>v1.7 by Apex<\/strong>";
+				return text;
+			},
+			onRemove: function(map) {}
+		});
+
+		L.control.textbox = function(opts) {
+			return new L.Control.textbox(opts);
+		};
+
+		L.control.textbox({
+			position: 'bottomright'
+		}).addTo(map);
+
+		var CivIcon = L.icon({
+			iconUrl: 'img/civ.png',
+			iconSize: [14, 14],
+			iconAnchor: [7, 14]
+		});
+
+		var CivCar = L.icon({
+			iconUrl: 'img/civcar.png',
+			iconSize: [16, 16],
+			iconAnchor: [8, 16]
+		});
+
+		var CopIcon = L.icon({
+			iconUrl: 'img/cop.png',
+			iconSize: [14, 14],
+			iconAnchor: [7, 14]
+		});
+
+		var CopCar = L.icon({
+			iconUrl: 'img/copcar.png',
+			iconSize: [16, 16],
+			iconAnchor: [8, 16]
+		});
+
+		var FactionIcon = L.icon({
+			iconUrl: 'img/faction.png',
+			iconSize: [14, 14],
+			iconAnchor: [7, 14]
+		});
+
+		var FactionCar = L.icon({
+			iconUrl: 'img/factioncar.png',
+			iconSize: [16, 16],
+			iconAnchor: [8, 16]
+		});
+
+		var MedicIcon = L.icon({
+			iconUrl: 'img/medic.png',
+			iconSize: [14, 14],
+			iconAnchor: [7, 14]
+		});
+
+		var MedicCar = L.icon({
+			iconUrl: 'img/medicar.png',
+			iconSize: [16, 16],
+			iconAnchor: [8, 16]
+		});
+
+		var HeliIcon = L.icon({
+			iconUrl: 'img/heli.png',
+			iconSize: [16, 16],
+			iconAnchor: [8, 16]
+		});
+		
+		var socket = io();
+
+		socket.emit("client");
+		socket.on("update", (arg) => {
+			var json = JSON.parse(arg);
+			layerGroup.clearLayers();
+			for (var key in json.coords) {
+				if (json.coords[key].player_dead == 1) {continue;};
+				if (json.coords[key].player_x == 0) {continue;};
+				var latLng = L.latLng([json.coords[key].player_x, json.coords[key].player_y]);
+				if (json.coords[key].player_side == 0) { // FACTION
+					if (json.coords[key].player_in_vehicle == 0) {
+						L.marker(latLng, {
+							icon: FactionIcon,
+							forceZIndex: 100,
+							rotationOrigin: 'center',
+							rotationAngle: json.coords[key].player_direction
+						}).addTo(layerGroup);
+					} else {
+						L.marker(latLng, {
+							icon: FactionCar,
+							forceZIndex: 100,
+							rotationOrigin: 'center',
+							rotationAngle: json.coords[key].player_direction
+						}).addTo(layerGroup);
+					};
+				} else if (json.coords[key].player_side == 1) { // COP
+					if (json.coords[key].player_in_vehicle == 0) {
+						L.marker(latLng, {
+							icon: CopIcon,
+							forceZIndex: 100,
+							rotationOrigin: 'center',
+							rotationAngle: json.coords[key].player_direction
+						}).addTo(layerGroup);
+					} else {
+						L.marker(latLng, {
+							icon: CopCar,
+							forceZIndex: 100,
+							rotationOrigin: 'center',
+							rotationAngle: json.coords[key].player_direction
+						}).addTo(layerGroup);
+					};
+				} else if (json.coords[key].player_side == 2) { // MEDIC
+					if (json.coords[key].player_in_vehicle == 0) {
+						L.marker(latLng, {
+							icon: MedicIcon,
+							forceZIndex: 100,
+							rotationOrigin: 'center',
+							rotationAngle: json.coords[key].player_direction
+						}).addTo(layerGroup);
+					} else {
+						L.marker(latLng, {
+							icon: MedicCar,
+							forceZIndex: 100,
+							rotationOrigin: 'center',
+							rotationAngle: json.coords[key].player_direction
+						}).addTo(layerGroup);
+					};
+				} else if (json.coords[key].player_side == 3) { // CIV
+					if (json.coords[key].player_in_vehicle == 0) {
+						L.marker(latLng, {
+							icon: CivIcon,
+							forceZIndex: 100,
+							rotationOrigin: 'center',
+							rotationAngle: json.coords[key].player_direction
+						}).addTo(layerGroup);
+					} else {
+						L.marker(latLng, {
+							icon: CivCar,
+							forceZIndex: 100,
+							rotationOrigin: 'center',
+							rotationAngle: json.coords[key].player_direction
+						}).addTo(layerGroup);
+					};
+				} else {
+					continue;
+				};
+			};
+		});
+	}); 
+	</script>
+</body>
+</html>
