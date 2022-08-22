@@ -153,9 +153,9 @@ namespace Data
 
 	void ConnectSocket()
 	{
-    	io.connect("http://127.0.0.1:7000");
-			io.socket()->emit("server");
-    	printf("connected");
+	    	io.connect("http://127.0.0.1:7000");
+		io.socket()->emit("server");
+    		printf("connected");
 	}
 
 	void EmitData()
@@ -167,10 +167,10 @@ namespace Data
 			auto player = players[i];
 
 			Vector3 playerPosition = SDK::GetPlayerPosition(player.player_ptr);
-    	int player_side = (int)SDK::GetPlayerSide(player.player_ptr);
-      int player_dead = (int)SDK::GetPlayerDead(player.player_ptr);
-      int playerDirection = (int)SDK::GetPlayerDirection(player.player_ptr);
-      bool playerInVehicle = (bool)SDK::IsPlayerInVehicle(player.player_ptr);
+    			int player_side = (int)SDK::GetPlayerSide(player.player_ptr);
+      			int player_dead = (int)SDK::GetPlayerDead(player.player_ptr);
+      			int playerDirection = (int)SDK::GetPlayerDirection(player.player_ptr);
+      			bool playerInVehicle = (bool)SDK::IsPlayerInVehicle(player.player_ptr);
 			const auto _i = std::to_string(i);
 
 			j["coords"][_i]["player_y"] = playerPosition.x;
@@ -190,6 +190,6 @@ namespace Data
 		const auto s = j.dump();
 		io.socket()->emit("json", s);
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 }
