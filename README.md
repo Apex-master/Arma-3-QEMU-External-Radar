@@ -71,4 +71,6 @@ RAM: 16gb </br>
 
 
 ## Related
+[passthrough_helper_manjaro](https://github.com/pavolelsig/passthrough_helper_manjaro)
+[PCI passthrough via OVMF](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF)
 [Arma-3-reverse-engineering](https://github.com/Apex-master/Arma-3-reverse-engineering)
