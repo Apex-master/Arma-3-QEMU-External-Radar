@@ -36,7 +36,7 @@ The radar relies on NodeJS and socket.io to receive the JSON data from the Memor
 
 
 
-My setup: </br>
+<b>My setup:</b> </br>
 OS: Manjaro 21.3 KDE </br>
 Kernel: x86_64 Linux 5.18.19 </br>
 CPU: i5-12600K </br>
@@ -71,6 +71,6 @@ RAM: 16gb </br>
 
 
 ## Related
-[passthrough_helper_manjaro](https://github.com/pavolelsig/passthrough_helper_manjaro)
-[PCI passthrough via OVMF](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF)
-[Arma-3-reverse-engineering](https://github.com/Apex-master/Arma-3-reverse-engineering)
+* [passthrough_helper_manjaro](https://github.com/pavolelsig/passthrough_helper_manjaro)
+* [PCI passthrough via OVMF](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF)
+* [Arma-3-reverse-engineering](https://github.com/Apex-master/Arma-3-reverse-engineering)
