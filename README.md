@@ -7,7 +7,7 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 ## Main Features
 
 * Live radar (player coords, player side, player dead, player direction, player in vehicle)
-* Arma 3 Altis map files, multi-user browser access for the radar using LAN/VPN.
+* Arma 3 Altis map files (jetelain), multi-user browser access for the radar using LAN/VPN.
 * No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti-cheats)
 * No weapon sway (not setCustomAimCoef should bypass most script-based anti-cheats)
 
@@ -68,6 +68,7 @@ RAM: 16gb </br>
 * [Guided Hacking Youtube](https://www.youtube.com/c/GuidedHacking)
 * [ARMA 3 Reversal, Structs and Offsets](https://www.unknowncheats.me/forum/arma-3-a/114242-arma-3-reversal-structs-offsets.html)
 * [memflow](https://github.com/memflow/memflow)
+* [Arma3Map](https://github.com/jetelain/Arma3Map)
 
 
 ## Related
