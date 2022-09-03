@@ -12,7 +12,7 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 * No weapon sway (not setCustomAimCoef should bypass most script-based anti-cheats)
 
 <b>Demo (old version)</b>
-![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)
+![](https://github.com/Apex-master/Arma-3-External-Radar/blob/main/exmp.gif)
 
 ## How it works
 <b>Linux Memory RPM/WPM Client</b><br/>
