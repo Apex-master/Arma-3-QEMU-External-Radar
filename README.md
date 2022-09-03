@@ -11,6 +11,9 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 * No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti-cheats)
 * No weapon sway (not setCustomAimCoef should bypass most script-based anti-cheats)
 
+<b>Demo (old version)</b>
+![map gif](https://i.imgur.com/61oaJ5V.mp4)
+
 ## How it works
 <b>Linux Memory RPM/WPM Client</b><br/>
 On the host machine, we are able to read and write to our guest machine's memory efficiently and safely using C++ and the memflow connector, arma_dma reads the guest's memory and searches for Arma 3, once found it reads the game's data we need and stores it into an array, the array then gets converted into JSON format using nlohmann/json and then is sent over to our NodeJS server using socket.io.
