@@ -20,16 +20,19 @@ io.on('connection', (socket) => {
     socket.on('server', () => {
         console.log('Server Connected');
     });
+    
     socket.on('client', () => {
         console.log('Client Connected');
     });
+    
     socket.on('json', (data) => {
         io.emit("update", data);
     });
     
-  socket.on('disconnect', () => {
-    console.log('Disconnected');
-  });
+    socket.on('disconnect', () => {
+        console.log('Disconnected');
+    });
+    
 });
 
 
