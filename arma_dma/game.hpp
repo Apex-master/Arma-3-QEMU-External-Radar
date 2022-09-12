@@ -1,7 +1,7 @@
 #include <iostream>
 #include "utils/sio_client.h"
-#include "globals.hpp"
 #include "utils/json.hpp"
+#include "globals.hpp"
 #include "memory.h"
 
 using namespace sio;
