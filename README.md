@@ -11,7 +11,7 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 * No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti-cheats)
 * No weapon sway (not setCustomAimCoef should bypass most script-based anti-cheats)
 
-<b>Demo (Old version - File create/delete used before changing communication methods to sockets)</b>
+<b>Demo (Old version - File create/delete used before changing communication methods to sockets):</b>
 ![](https://github.com/Apex-master/Arma-3-External-Radar/blob/main/exmp.gif)
 
 ## How it works
