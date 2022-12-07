@@ -1,0 +1,208 @@
+<domain xmlns:qemu="http://libvirt.org/schemas/domain/qemu/1.0" type="kvm">
+  <name>win10-SPOOFED-A7</name>
+  <uuid>473c3e1c-1184-4424-8d64-87535b849c58</uuid>
+  <memory unit="KiB">8388608</memory>
+  <currentMemory unit="KiB">8388608</currentMemory>
+  <vcpu placement="static">12</vcpu>
+  <sysinfo type="smbios">
+    <bios>
+      <entry name="vendor">American Megatrends International, LLC.</entry>
+      <entry name="version">F7b</entry>
+      <entry name="date">10/04/2022</entry>
+      <entry name="release">11.23</entry>
+    </bios>
+    <system>
+      <entry name="manufacturer">Gigabyte Technology Co. Ltd,</entry>
+      <entry name="product">AORUS COMPUTER</entry>
+      <entry name="version">3</entry>
+      <entry name="serial">Z39852PO</entry>
+      <entry name="uuid">9e8c7d8b-cdfe-41f8-92e2-233f2cj31386</entry>
+      <entry name="sku">SKU</entry>
+      <entry name="family">To be filled by O.E.M.</entry>
+    </system>
+    <baseBoard>
+      <entry name="manufacturer">Gigabyte Technology Co. Ltd,</entry>
+      <entry name="product">Z690 AORUS ELITE DDR4</entry>
+      <entry name="version">Default string</entry>
+      <entry name="serial">E30113EZ</entry>
+      <entry name="asset">Default string</entry>
+      <entry name="location">Default string</entry>
+    </baseBoard>
+    <chassis>
+      <entry name="manufacturer">Gigabyte Technology Co. Ltd,</entry>
+      <entry name="version">Default string</entry>
+      <entry name="serial">E50138ZR</entry>
+      <entry name="asset">Default string</entry>
+      <entry name="sku">Default string</entry>
+    </chassis>
+  </sysinfo>
+  <os>
+    <type arch="x86_64" machine="pc-q35-5.2">hvm</type>
+    <loader readonly="yes" type="pflash">/usr/SPOOFED/OVMF_CODE.fd</loader>
+    <nvram>/usr/SPOOFED/OVMF_VARS.fd</nvram>
+    <bootmenu enable="no"/>
+    <smbios mode="sysinfo"/>
+  </os>
+  <features>
+    <acpi/>
+    <apic/>
+    <hap state="on"/>
+    <hyperv mode="custom">
+      <relaxed state="on"/>
+      <vapic state="on"/>
+      <spinlocks state="on" retries="8191"/>
+      <vpindex state="on"/>
+      <runtime state="on"/>
+      <synic state="on"/>
+      <stimer state="on"/>
+      <reset state="on"/>
+      <vendor_id state="on" value="dnwewwhj1"/>
+      <frequencies state="on"/>
+      <reenlightenment state="on"/>
+      <tlbflush state="on"/>
+      <ipi state="on"/>
+      <evmcs state="off"/>
+    </hyperv>
+    <kvm>
+      <hidden state="on"/>
+    </kvm>
+    <vmport state="off"/>
+  </features>
+  <cpu mode="host-passthrough" check="none" migratable="on">
+    <topology sockets="1" dies="1" cores="6" threads="2"/>
+  </cpu>
+  <clock offset="localtime">
+    <timer name="rtc" tickpolicy="catchup"/>
+    <timer name="pit" tickpolicy="discard"/>
+    <timer name="hpet" present="no"/>
+    <timer name="hypervclock" present="no"/>
+    <timer name="tsc" present="no" mode="native"/>
+  </clock>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <pm>
+    <suspend-to-mem enabled="no"/>
+    <suspend-to-disk enabled="no"/>
+  </pm>
+  <devices>
+    <emulator>/opt/stealth-qemu/bin/qemu-system-x86_64</emulator>
+    <disk type="block" device="disk">
+      <driver name="qemu" type="raw" cache="none" io="native" discard="ignore" detect_zeroes="off"/>
+      <source dev="/dev/sdb"/>
+      <target dev="sdc" bus="sata"/>
+      <serial>F138F881</serial>
+      <address type="drive" controller="0" bus="0" target="0" unit="2"/>
+    </disk>
+    <controller type="usb" index="0" model="qemu-xhci" ports="15">
+      <address type="pci" domain="0x0000" bus="0x02" slot="0x00" function="0x0"/>
+    </controller>
+    <controller type="pci" index="0" model="pcie-root"/>
+    <controller type="pci" index="1" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="1" port="0x8"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0" multifunction="on"/>
+    </controller>
+    <controller type="pci" index="2" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="2" port="0x9"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
+    </controller>
+    <controller type="pci" index="3" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="3" port="0xa"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x2"/>
+    </controller>
+    <controller type="pci" index="4" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="4" port="0xb"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x3"/>
+    </controller>
+    <controller type="pci" index="5" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="5" port="0xc"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x4"/>
+    </controller>
+    <controller type="pci" index="6" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="6" port="0xd"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x5"/>
+    </controller>
+    <controller type="pci" index="7" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="7" port="0xe"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x6"/>
+    </controller>
+    <controller type="pci" index="8" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="8" port="0xf"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x7"/>
+    </controller>
+    <controller type="pci" index="9" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="9" port="0x10"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x02" function="0x0" multifunction="on"/>
+    </controller>
+    <controller type="pci" index="10" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="10" port="0x11"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x02" function="0x1"/>
+    </controller>
+    <controller type="pci" index="11" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="11" port="0x12"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x02" function="0x2"/>
+    </controller>
+    <controller type="pci" index="12" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="12" port="0x13"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x02" function="0x3"/>
+    </controller>
+    <controller type="pci" index="13" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="13" port="0x14"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x02" function="0x4"/>
+    </controller>
+    <controller type="pci" index="14" model="pcie-root-port">
+      <model name="pcie-root-port"/>
+      <target chassis="14" port="0x15"/>
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x02" function="0x5"/>
+    </controller>
+    <controller type="sata" index="0">
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x1f" function="0x2"/>
+    </controller>
+    <input type="mouse" bus="ps2"/>
+    <input type="keyboard" bus="ps2"/>
+    <audio id="1" type="none"/>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x01" slot="0x00" function="0x0"/>
+      </source>
+      <rom bar="on" file="/etc/firmware/MSI.RTX3070Ti.8192.210427_1.rom"/>
+      <address type="pci" domain="0x0000" bus="0x03" slot="0x00" function="0x0"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x01" slot="0x00" function="0x1"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
+    </hostdev>
+    <memballoon model="none"/>
+  </devices>
+  <qemu:commandline>
+    <qemu:arg value="-smbios"/>
+    <qemu:arg value="type=17,manufacturer=Samsung"/>
+    <qemu:arg value="-smbios"/>
+    <qemu:arg value="type=4,manufacturer=Intel(R) Corporation,version=Intel(R) Core(TM) i5-12600K CPU @ 4.20GHz"/>
+    <qemu:arg value="-object"/>
+    <qemu:arg value="input-linux,id=kbd1,evdev=/dev/input/by-id/usb-Corsair_Corsair_Gaming_K95_RGB_PLATINUM_Keyboard_1601903CAF7898E05F119ED5F5001BC0-event-kbd,grab_all=on,repeat=on"/>
+    <qemu:arg value="-object"/>
+    <qemu:arg value="input-linux,id=mouse1,evdev=/dev/input/by-id/usb-Corsair_Corsair_Gaming_K95_RGB_PLATINUM_Keyboard_1601402CAF7898E05F119ED5F5001BC0-event-mouse"/>
+    <qemu:arg value="-object"/>
+    <qemu:arg value="input-linux,id=mouse2,evdev=/dev/input/by-id/usb-Razer_Razer_DeathAdder_V2-event-mouse"/>
+    <qemu:arg value="-object"/>
+    <qemu:arg value="input-linux,id=kbd2,evdev=/dev/input/by-id/usb-Razer_Razer_DeathAdder_V2-if01-event-kbd,grab_all=on,repeat=on"/>
+    <qemu:arg value="-object"/>
+    <qemu:arg value="input-linux,id=kbd3,evdev=/dev/input/by-id/usb-Razer_Razer_DeathAdder_V2-if02-event-kbd,grab_all=on,repeat=on"/>
+  </qemu:commandline>
+</domain>
