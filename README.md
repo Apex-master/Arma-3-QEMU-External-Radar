@@ -30,9 +30,11 @@ The radar relies on NodeJS and socket.io to receive the JSON data from the Memor
 * [Catch2](https://github.com/catchorg/Catch2/tree/9c07718b5f779bc1405f98ca6b5b693026f6eac7)
 
 <b>Radar and Communication Server (/nodejs):</b>
-* [Leaflet](https://github.com/Leaflet/Leaflet)
+* [NodeJS](https://github.com/nodejs/node)
+* [npm](https://github.com/npm)
 * [express](https://www.npmjs.com/package/express)
 * [socket.io](https://www.npmjs.com/package/socket.io)
+* [Leaflet](https://github.com/Leaflet/Leaflet)
 
 ## Building
 
@@ -56,7 +58,7 @@ RAM: 16gb </br>
 `sudo ./arma_dma`
 
 <b>Radar and Communication Server (/nodejs):</b>
-1. Download and install NodeJS and npm.
+1. Download and install the required dependencies.
 2. Navigate to NodeJS and run:
 `npm install`
 `node server.js`
