@@ -169,8 +169,8 @@ namespace Data
 			Vector3 playerPosition = SDK::GetPlayerPosition(player.player_ptr);
     			int player_side = (int)SDK::GetPlayerSide(player.player_ptr);
       			int player_dead = (int)SDK::GetPlayerDead(player.player_ptr);
-      			int playerDirection = (int)SDK::GetPlayerDirection(player.player_ptr);
-      			bool playerInVehicle = (bool)SDK::IsPlayerInVehicle(player.player_ptr);
+      			int player_direction = (int)SDK::GetPlayerDirection(player.player_ptr);
+      			bool player_in_vehicle = (bool)SDK::IsPlayerInVehicle(player.player_ptr);
 			const auto _i = std::to_string(i);
 
 			j["coords"][_i]["player_y"] = playerPosition.x;
@@ -181,10 +181,10 @@ namespace Data
 			// printf("Player Side: %i\n", player_side);
 			j["coords"][_i]["player_dead"] = player_dead;
 			// printf("Player Dead: %i\n", player_dead);
-			j["coords"][_i]["player_direction"] = playerDirection;
-			// printf("Player Direction: %i\n", playerDirection);
-			j["coords"][_i]["player_in_vehicle"] = playerInVehicle;
-			// printf("Player In Vehicle: %b\n", playerInVehicle);
+			j["coords"][_i]["player_direction"] = player_direction;
+			// printf("Player Direction: %i\n", player_direction);
+			j["coords"][_i]["player_in_vehicle"] = player_in_vehicle;
+			// printf("Player In Vehicle: %b\n", player_in_vehicle);
 		}
 
 		const auto s = j.dump();
