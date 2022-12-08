@@ -49,7 +49,7 @@ RAM: 16gb </br>
 
 <b>Memory RPM/WPM Client (/arma_dma):</b>
 1. Download and install the required dependencies.
-2. Navigate to arma_dma and compile the source by running the script "build.sh". You need to have Rust installed and updated:
+2. Navigate to /arma_dma and compile the source by running the script "build.sh". You need to have Rust installed and updated:
 `cd arma_dma`
 `sudo ./build.sh`
 
@@ -59,13 +59,14 @@ RAM: 16gb </br>
 
 <b>Radar and Communication Server (/nodejs):</b>
 1. Download and install the required dependencies.
-2. Navigate to NodeJS and run:
+2. Navigate to /nodejs and run:
 `npm install`
 `node server.js`
 
 ## To do
 * Implement server and user authentication.
 * Add other Arma 3 maps
+* Implement some other way of rendering leaflet markers, instead of deleting all previous markers on the second layer when receiving a signal from socket.io, instead store the players into a structure/database, then update and move the markers.
 
 ## Credits
 * [apex_dma_kvm_pub](https://github.com/MisterY52/apex_dma_kvm_pub)
