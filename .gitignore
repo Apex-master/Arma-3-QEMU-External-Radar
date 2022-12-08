@@ -1,0 +1,4 @@
+arma_dma/build
+arma_dma/memflow_lib/target
+arma_dma/memory.o
+arma_dma/arma_dma.o
