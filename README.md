@@ -37,9 +37,6 @@ The radar relies on NodeJS and socket.io to receive the JSON data from the Memor
 * [Leaflet](https://github.com/Leaflet/Leaflet)
 
 ## Building
-
-
-
 <b>My setup:</b> </br>
 OS: Manjaro 21.3 KDE </br>
 Kernel: x86_64 Linux 5.18.19 </br>
@@ -48,20 +45,33 @@ GPU: RTX 3070ti </br>
 RAM: 16gb </br>
 
 <b>Memory RPM/WPM Client (/arma_dma):</b>
-1. Download and install the required dependencies.
-2. Navigate to /arma_dma and compile the source by running the script "build.sh". You need to have Rust installed and updated:
-`cd arma_dma`
-`sudo ./build.sh`
+1. Navigate to /arma_dma convert .sh scripts to executable
+```bash
+cd arma_dma
+sudo chmod +x build.sh
+sudo chmod +x depInstall.sh
+```
+2. Compile the source by running the script `build.sh` or `depInstallBuild.sh` if on Manjaro/arch. You need to have <b>Rust</b> installed and updated:
+```bash
+sudo ./build.sh
+```
+```bash
+sudo ./depInstallBuild.sh
+```
 
 3. Navigate to the newly created /build folder and run arma_dma as root:
-`cd build`
-`sudo ./arma_dma`
+```bash
+cd build
+sudo ./arma_dma
+```
 
 <b>Radar and Communication Server (/nodejs):</b>
 1. Download and install the required dependencies.
 2. Navigate to /nodejs and run:
-`npm install`
-`node server.js`
+```bash
+npm install
+node server.js
+```
 
 ## To do
 * Implement server and user authentication.
