@@ -69,6 +69,8 @@ RAM: 16gb </br>
 * Player direction lines.
 * Implement some other way of rendering leaflet markers, instead of deleting all previous markers on the second layer when receiving a signal from socket.io, instead store the players into a structure/database, then update and move the markers.
 * Instead of using PNGs for the player/vehicle icons use SVG or even better render it using JS.
+* Properly implement socket.io-client-cpp bind_events and listeners.
+
 
 ## Credits
 * [apex_dma_kvm_pub](https://github.com/MisterY52/apex_dma_kvm_pub)
