@@ -23,7 +23,7 @@ void read_th()
 			for (uint32_t ai_center = 0; ai_center < 4; ai_center++)
 			{
 				uint64_t allunits_ptr;
-				arma_mem.Read<uint64_t>(SDK::GetWorld() + 0x2948 + (ai_center * 0x8), allunits_ptr);
+				arma_mem.Read<uint64_t>(SDK::GetWorld() + 0x29B8 + (ai_center * 0x8), allunits_ptr);
 
 				if (allunits_ptr)
 				{
