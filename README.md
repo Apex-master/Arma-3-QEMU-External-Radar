@@ -8,8 +8,8 @@ Arma 3 external radar.  Built using C++, NodeJS, socket.io and Leaflet!
 
 * Live radar (player coords, player side, player dead, player direction, player in vehicle)
 * Arma 3 Altis map files (jetelain), multi-user browser access for the radar using LAN/VPN.
-* No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti-cheats)
-* No weapon sway (not setCustomAimCoef should bypass most script-based anti-cheats)
+* No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti-cheats [F3 44 0F 59 C2 44 0F 29 48 B8])
+* No weapon sway (not setCustomAimCoef should bypass most script-based anti-cheats [F3 0F 59 05 ?? ?? ?? ?? F3 0F 11 43 1C F3 0F 10 05, F3 0F 59 0D ?? ?? ?? ?? F3 0F 11 4B 18])
 
 <b>Demo (Old version - File create/delete used before changing communication methods to sockets):</b>
 ![](https://github.com/Apex-master/Arma-3-External-Radar/blob/main/exmp.gif)
