@@ -138,9 +138,9 @@ namespace SDK
 
 	void AimAssist()
 	{
-		arma_mem.Write<float>(g_base + 0x2662B04, 0.f);  // no recoil (not setUnitRecoilCoefficient)
-		arma_mem.Write<float>(g_base + 0x2662A30, 0.f);  // no sway v1 (not setCustomAimCoef)
-		arma_mem.Write<float>(g_base + 0x2662A60, 0.f);  // no sway v2 (not setCustomAimCoef)
+		arma_mem.Write<float>(g_base + 0x26A6424, 0.f);  // no recoil (not setUnitRecoilCoefficient)
+		arma_mem.Write<float>(g_base + 0x26A6380, 0.f);  // no sway v1 (not setCustomAimCoef)
+		arma_mem.Write<float>(g_base + 0x26A6350, 0.f);  // no sway v2 (not setCustomAimCoef)
 	}
 
 }
