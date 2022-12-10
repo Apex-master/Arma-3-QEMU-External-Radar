@@ -13,7 +13,7 @@ Arma 3 QEMU external radar. Built using memflow, NodeJS, socket.io and Leaflet!
 
 <b>Demo (Slow old version - File create/delete used in demo below, new communication method (sockets) is much faster):</b>
 ![](https://github.com/Apex-master/Arma-3-QEMU-External-Radar/blob/main/example1.gif)
-![](https://github.com/Apex-master/Arma-3-QEMU-External-Radar/blob/main/exmp2.mp4)
+![](https://github.com/Apex-master/Arma-3-QEMU-External-Radar/blob/main/exmp2.gif)
 
 ## How it works
 <b>Linux Memory RPM/WPM Client</b><br/>
