@@ -11,7 +11,7 @@ Arma 3 QEMU external radar. Built using memflow, NodeJS, socket.io and Leaflet!
 * No weapon recoil (not setUnitRecoilCoefficient should bypass most script-based anti-cheats)
 * No weapon sway (not setCustomAimCoef should bypass most script-based anti-cheats)
 
-<b>Demo (Slow old version - File create/delete used in demo below, new communication method (sockets) is much faster):</b>
+<b>Demos (Slow old version - File create/delete used in demo below, new communication method (sockets) is much faster):</b>
 ![](https://github.com/Apex-master/Arma-3-QEMU-External-Radar/blob/main/exmp1.gif)
 ![](https://github.com/Apex-master/Arma-3-QEMU-External-Radar/blob/main/exmp2.gif)
 
