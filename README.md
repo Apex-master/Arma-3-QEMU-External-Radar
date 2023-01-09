@@ -1,4 +1,4 @@
-# Arma-3-External-Radar
+# Arma-3-QEMU-External-Radar
 Arma 3 QEMU external radar. Built using memflow, NodeJS, socket.io and Leaflet! 
 
 * Memory RPM/WPM Client (/arma_dma)
