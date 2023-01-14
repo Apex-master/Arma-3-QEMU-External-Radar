@@ -17,10 +17,10 @@ Arma 3 QEMU external radar. Built using memflow, NodeJS, socket.io and Leaflet!
 
 ## How it works
 <b>Linux Memory RPM/WPM Client</b><br/>
-On the host machine, we are able to read and write to our guest machine's memory efficiently and safely using memflow, arma_dma reads the guest's memory and searches for Arma 3, once found it reads the game's data we need and stores it into an array, the array then gets converted into JSON format using nlohmann/json and then is sent over to our NodeJS server using socket.io.
+Using Memflow, arma_dma reads the guest machine's memory to search for Arma 3, which upon finding it, reads the game's data and stores it into an array. This array is then converted into JSON format by nlohmann/json and sent over to our NodeJS server through socket.io.
 
 <b>Radar and Communication Server</b><br/>
-The radar relies on NodeJS and socket.io to receive the JSON data from the Memory RPM/WPM Client (arma_dma). Once received socket.io emits a signal to the front-end containing our player data, it filters through the JSON and tells Leaflet to set up custom markers for each player.
+NodeJS and socket.io receive the JSON data from the Memory RPM/WPM Client (arma_dma). Upon receiving, socket.io emits a signal to the front-end containing player data that is then filtered through the JSON and used to set up custom markers for each player on Leaflet.
 
 ## Dependencies
 <b>Memory RPM/WPM Client (/arma_dma):</b>
