@@ -1,3 +1,5 @@
+
+
 # Arma-3-QEMU-External-Radar
 Arma 3 QEMU external radar. Built using memflow, NodeJS, socket.io and Leaflet! 
 
@@ -71,7 +73,7 @@ sudo ./arma_dma
 2. Navigate to /nodejs and run:
 ```bash
 npm install
-node server.js
+npm start
 ```
 
 ## To do
